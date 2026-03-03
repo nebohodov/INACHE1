@@ -94,6 +94,7 @@
             font-size: 1.4em;
             transition: background-color 0.3s, color 0.3s, transform 0.3s;
             border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.3);
         }
         nav button:hover {
             background-color: rgba(255, 0, 0, 0.3);
@@ -103,6 +104,7 @@
         nav button.active {
             background-color: #ff0000;
             color: white;
+            border-color: #ffffff;
         }
 
         .tab-content {
@@ -118,8 +120,19 @@
             display: block;
             opacity: 1;
         }
+        .tab-content h2 {
+            color: #ff8800;
+            font-size: 3em;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        .tab-content p {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
 
-        /* Фон для вкладки INⱯCHE 24 */
+        /* Фон INⱯCHE 24 */
         #upcoming {
             background-image: url('inache24fon.jpg');
             background-size: cover;
@@ -130,8 +143,8 @@
         #upcoming::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.55);
+            inset: 0;
+            background: rgba(0,0,0,0.55);
             z-index: 0;
         }
         #upcoming > * {
@@ -178,7 +191,7 @@
             font-weight: bold;
         }
 
-        /* Главная вкладка INⱯCHE — восстановлены блоки */
+        /* Главная вкладка */
         .main-features {
             display: flex;
             flex-wrap: wrap;
@@ -197,6 +210,7 @@
             background: rgba(17,17,17,0.5);
             box-shadow: 0 4px 15px rgba(255,136,0,0.2);
             transition: transform 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
         }
         .main-feature:hover {
             transform: scale(1.1);
@@ -233,6 +247,7 @@
         }
         .info-block:hover {
             transform: translateY(-10px);
+            border-color: #ffffff88;
         }
         .info-block:nth-child(1) { animation-delay: 1.5s; }
         .info-block:nth-child(2) { animation-delay: 1.7s; }
@@ -252,7 +267,7 @@
             line-height: 1.7;
         }
 
-        /* Остальные стили (галерея, легенды, анкета, футер) без изменений */
+        /* Галерея */
         .albums-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -292,8 +307,10 @@
             margin: 0;
             font-size: 2.2em;
             color: #ff8800;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
 
+        /* Легенды */
         .legends-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -329,6 +346,7 @@
             line-height: 1.6;
         }
 
+        /* Анкета */
         .application-form {
             background: #111;
             padding: 50px;
@@ -440,29 +458,143 @@
     </div>
 </div>
 
-<!-- Остальные вкладки без изменений -->
 <div id="tickets" class="tab-content">
     <h2>Билеты</h2>
     <div class="tickets">
         <p>Выберите удобный способ покупки:</p>
-        <a href="https://t.me/inache24" target="_blank">Через Telegram-бот</a>
-        <a href="https://vk.com/inache24" target="_blank">В группе ВКонтакте</a>
+        <div class="social-links">
+            <div class="social-card">
+                <a href="https://t.me/inache24" target="_blank">Через Telegram-бот</a>
+            </div>
+            <div class="social-card">
+                <a href="https://vk.com/inache24" target="_blank">В группе ВКонтакте</a>
+            </div>
+        </div>
     </div>
 </div>
 
 <div id="gallery" class="tab-content">
-    <h2>Галерея</h2>
+    <h2>Галерея с прошлых фестивалей</h2>
     <div class="albums-grid" id="albumsGrid">
-        <!-- Все альбомы как было раньше -->
         <div class="album-cover" onclick="window.open('https://vk.com/albums-230276707', '_blank')">
             <img src="goida.jpg" alt="Vol.23">
             <div class="album-overlay"><h3>Vol.23</h3></div>
         </div>
-        <!-- ... остальные 7 альбомов ... -->
+        <div class="album-cover" onclick="window.open('https://vk.com/albums-229555234', '_blank')">
+            <img src="vol22.jpg" alt="Vol.22">
+            <div class="album-overlay"><h3>Vol.22</h3></div>
+        </div>
+        <div class="album-cover" onclick="window.open('https://vk.com/albums-227332070', '_blank')">
+            <img src="vol21.jpg" alt="Vol.21">
+            <div class="album-overlay"><h3>Vol.21</h3></div>
+        </div>
+        <div class="album-cover" onclick="window.open('https://vk.com/album-178317739_302822250', '_blank')">
+            <img src="vol20.jpg" alt="Vol.20">
+            <div class="album-overlay"><h3>Vol.20</h3></div>
+        </div>
+        <div class="album-cover" onclick="window.open('https://vk.com/album-178317739_288248408', '_blank')">
+            <img src="vol19.jpg" alt="Vol.19">
+            <div class="album-overlay"><h3>Vol.19</h3></div>
+        </div>
+        <div class="album-cover" onclick="window.open('https://vk.com/inache18?z=album-178317739_284513001', '_blank')">
+            <img src="vol18.jpg" alt="Vol.18">
+            <div class="album-overlay"><h3>Vol.18</h3></div>
+        </div>
+        <div class="album-cover" onclick="window.open('https://vk.com/inachemusicmeet?z=album-178317739_282208559', '_blank')">
+            <img src="vol17.jpg" alt="Vol.17">
+            <div class="album-overlay"><h3>Vol.17</h3></div>
+        </div>
+        <div class="album-cover" onclick="window.open('https://vk.com/inachemusicvol16?z=album-178317739_279795046', '_blank')">
+            <img src="vol16.jpg" alt="Vol.16">
+            <div class="album-overlay"><h3>Vol.16</h3></div>
+        </div>
     </div>
 </div>
 
-<!-- Легенды, анкета, футер без изменений -->
+<div id="legends" class="tab-content">
+    <h2>Легенды фестиваля</h2>
+    <div class="legends-grid">
+        <div class="legend-item">
+            <img src="driveins.jpg" alt="DRIVE-INS">
+            <div class="legend-overlay">
+                <h3>DRIVE-INS</h3>
+                <p>Одна из немногих групп, которая не распалась и активно работает над авторской музыкой. Парни были завсегдатыми гостями фестиваля, играли кайфовую попсу и радовали зрителей своим появлением на сцене. Сейчас вы можете послушать их треки на всех площадках.</p>
+            </div>
+        </div>
+        <div class="legend-item">
+            <img src="slychaino.jpg" alt="Случайно">
+            <div class="legend-overlay">
+                <h3>Случайно</h3>
+                <p>Коллектив, который действительно собрался практически случайно. Группа с первого выступления полюбилась публике. Ребята играли самые разные песни с 17 по 21 фестивали, а сейчас разбежались по своим делам и проектам.</p>
+            </div>
+        </div>
+        <div class="legend-item">
+            <img src="fotovcvete.jpg" alt="Фото в цвете">
+            <div class="legend-overlay">
+                <h3>Фото в цвете</h3>
+                <p>Группа с самой дружелюбной атмосферой. Играли классику рока и танцевальные хиты разных годов. Вполне возможно, что мы еще увидим их на сцене нашего фестиваля.</p>
+            </div>
+        </div>
+        <div class="legend-item">
+            <img src="fros.jpg" alt="First Ray Of Sun">
+            <div class="legend-overlay">
+                <h3>First Ray Of Sun</h3>
+                <p>Главные металисты фестиваля. Группа не выступает уже несколько лет, но в лучшие годы приводили с собой много людей и дарили море эмоций публике своими выступлениями.</p>
+            </div>
+        </div>
+        <div class="legend-item">
+            <img src="tekst.jpg" alt="Вставить текст">
+            <div class="legend-overlay">
+                <h3>Вставить текст</h3>
+                <p>Новички, которые сразу завоевали любовь аудитории своей харизмой и вайбом. Ребята играли каверы на моргенштерна, anacondaz и лучший западный рок.</p>
+            </div>
+        </div>
+        <div class="legend-item">
+            <img src="stas.jpg" alt="Стас Коренчук">
+            <div class="legend-overlay">
+                <h3>Стас Коренчук</h3>
+                <p>Бывший организатор фестиваля, выступал со своим проектом Stasis. Ребята играли хиты Linkin Park, Thirty Seconds to Mars, BMTH и авторские треки Стаса. Сейчас Стас поёт в группе Still Hurts и преподает гитару.</p>
+            </div>
+        </div>
+        <div class="legend-item">
+            <img src="Petya.jpg" alt="Петр Кондаков">
+            <div class="legend-overlay">
+                <h3>Петр Кондаков</h3>
+                <p>Главный ведущий с потрясающей харизмой, играл на электрогитаре с разными коллективами много фестивалей подряд. Продолжает быть ведущим и работает звукорежиссером.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="application" class="tab-content">
+    <div class="application-form">
+        <h2>Анкета для желающих выступить</h2>
+        <p class="intro-text">Вы молодая группа, которая хочет получить опыт выступлений, или просто играете с друзьями классные каверы? Тогда заполняйте анкету, учтите, максимум 4 песни, можно 1 свою, каверы должны быть на популярную музыку</p>
+
+        <form id="appForm" action="https://formspree.io/f/xrebnrnw" method="POST">
+            <label for="band-name">1) Название группы *</label>
+            <input type="text" id="band-name" name="band-name" required placeholder="Введите название вашей группы">
+
+            <label for="songs">2) Список песен, которые хотите исполнить *</label>
+            <textarea id="songs" name="songs" required placeholder="Перечислите песни (по одной на строку или через запятую)&#10;Например:&#10;Metallica - Enter Sandman&#10;Queen - Bohemian Rhapsody&#10;..."></textarea>
+
+            <label for="contacts">3) Контакты для связи (просьба дать VK/TG) *</label>
+            <textarea id="contacts" name="contacts" required placeholder="Укажите ваш VK или Telegram для связи"></textarea>
+
+            <label for="equipment">4) Нужное группе оборудование *</label>
+            <textarea id="equipment" name="equipment" required placeholder="Укажите, какое оборудование вам требуется (микрофоны, мониторы, инструменты, комбики и т.д.)"></textarea>
+
+            <label for="additional">5) Дополнительная информация (по желанию)</label>
+            <textarea id="additional" name="additional" placeholder="Расскажите о себе, опыте выступлений, ссылки на записи и т.д."></textarea>
+
+            <button type="submit">Отправить анкету</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 INⱯCHE Festival</p>
+</footer>
 
 <script>
 function openTab(evt, tabName) {
@@ -472,6 +604,10 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add('active');
 
     document.getElementById('main-header').style.display = (tabName === 'main') ? 'flex' : 'none';
+
+    if (tabName === 'gallery') {
+        document.getElementById('albumsGrid').style.display = 'grid';
+    }
 }
 
 function updateCountdown() {
@@ -494,6 +630,15 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+// Сброс формы после успеха
+window.addEventListener('load', function() {
+    if (window.location.search.includes('success')) {
+        document.getElementById('appForm').reset();
+        alert('Анкета отправлена! Спасибо!');
+        history.replaceState({}, document.title, window.location.pathname);
+    }
+});
 </script>
 </body>
 </html>
